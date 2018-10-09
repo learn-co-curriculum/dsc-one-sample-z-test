@@ -34,7 +34,7 @@ Our alternative hypothesis would always reflect the the idea/theory that needs t
 
 > Sample mean is **significantly** greater than the population mean
 
-Again, significance is the key here. Following the representation of means given above, we can write our alternative hypothesis as:
+Again, significance is the key here. IF we denote sample mean as (M), and population mean as mu (μ), we can write our alternative hypothesis as:
 
 >**Ha : μ < M**
 
@@ -69,7 +69,7 @@ Yes, it takes some getting used to come in terms with this. Putting it simply, t
 For general experimenting, the significance level (alpha) is .05 i.e. there is 5 percent chance that you will reject null hypothesis when it is true. So later we'll see that if our results follow this pattern, we will be able to say that "With a confidence level of 95%, we can state that ....". For a z-distribution, this can be shown as below:
 ![](https://slideplayer.com/slide/9325599/28/images/6/Types+of+Hypothesis+Tests.jpg)
 
-For testing both sides of the distribution (as in our example case), we need to do a 2-tail test to see if mentoring lowers OR highers the IQ of student. When testing of single side i.e. just higher OR just lower, we use a 1-tail testas shown in the second and third images. The alpha value we need to test is 0.05 or 5%. i.e.
+For testing both sides of the distribution , we need to do a 2-tail test to see if mentoring lowers OR highers the IQ of student. Each red region would calculated as alpha/2. When testing of single side (as in with our example) i.e. just higher OR just lower, we use a 1-tail test as shown in the first and second images. The alpha value we need to test is 0.05 or 5%. i.e.
 
 > The probabilities of seeing a value equal to or greater than our test statistic.
 
