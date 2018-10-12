@@ -1,18 +1,18 @@
 
 # One-Sample z-Test
 
-### Introduction
+## Introduction
 
 A one-sample z test is the most basic type of hypothesis test and is performed where the population means and standard deviation are known. This makes the analysis very simple. The main takeaway from this lesson and accompanied lab is to have an idea around the process of hypothesis testing and understanding test statistics and p-values. 
 
 ## Objectives:
-You would be able to :
+You will be able to:
 * Understand and explain use cases for a 1-sample z-test
 * Set up null and alternative hypotheses
 * Calculate z statistic using z-tables and cdf functions
-* Calculate and interpret p-value for significance of results. 
+* Calculate and interpret p-value for significance of results
 
-### 1-sample z-test
+## 1-sample z-test
 
 >The 1-sample z-test is best suited for situations where we we want to investigate whether a given "sample" comes from a particular "population". 
 
@@ -22,7 +22,7 @@ In situations like one above, a 1-sample Z test is used only for testing of the 
 
 So let's set up a problem scenario (known as a research question or analytical question) and apply a 1-sample z-test, while explaining all the steps required to call our results "statistically significant".
 
-### The Analytical Question 
+## The Analytical Question 
 
 >A researcher wants to study the effects of mentoring on intelligence scores. He wants to know as a baseline what the average intelligence of his students were relative to the general population. He used a standardized IQ test which has a mean of 100 and standard deviation of 16. The 50 students in his study scored an average of 102 on the IQ test. At He wants to investigate the fact whether the increase is IQ for the sample students is due to mentoring. 
 
