@@ -80,7 +80,7 @@ For z-tests, a z-statistic is used as our test statistic. There are other statis
 
 ![](http://sites.nicholas.duke.edu/statsreview/files/2013/06/zstat.png)
 
-This formula slightly difference from standard score foruma we saw earlier. Itincludes square root of n to reflect we are dealing with a sample variance here. 
+This formula slightly difference from standard score formula we saw earlier. It includes square root of n to reflect we are dealing with a sample variance here. 
 All you do is put in the values you are given into the formula. Your question should give you the sample mean (x̄), the standard deviation (σ) of population, and the number of items in the sample (n). Your hypothesized mean (in other words, the mean you are testing the hypothesis for, or your null hypothesis) is μ0.
 
 So let's calculate this. 
