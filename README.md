@@ -3,7 +3,7 @@
 
 ## Introduction
 
-A one-sample z test is the most basic type of hypothesis test and is performed where the population means and standard deviation are known. This makes the analysis very simple. The main takeaway from this lesson and accompanied lab is to have an idea around the process of hypothesis testing and understanding test statistics and p-values. 
+A one-sample z test is the most basic type of hypothesis test and is performed when the population means and standard deviation are known. This makes the analysis very simple. The main takeaway from this lesson and next lab is to have an idea around the process of hypothesis testing and understanding test statistics and p-values. 
 
 ## Objectives:
 You will be able to:
@@ -12,78 +12,75 @@ You will be able to:
 * Calculate z statistic using z-tables and cdf functions
 * Calculate and interpret p-value for significance of results
 
-## 1-sample z-test
+## One-Sample z-test
 
->The 1-sample z-test is best suited for situations where we we want to investigate whether a given "sample" comes from a particular "population". 
+**The one-sample z-test is best suited for situations where we we want to investigate whether a given "sample" comes from a particular "population".**
 
-For example, suppose you are doing an investigation on the data collected from successive cohorts of students taking the data science classes. You may want to ask yourself whether a particular sample of students is similar to or different from student population in general in terms of any of its attributes (age, performance, marital/social status etc.) 
-
-In situations like one above, a 1-sample Z test is used only for testing of the sample mean. Following this notion, our hypothesis would test whether the average of our sample students suggests that this sample comes from a population with a know mean or whether it comes from a different population. Examples of when we would likely know the population standard deviation are for things like IQ scores, SAT or ACT scores (those standardized college entrance exams) and heights and weights.
-
-So let's set up a problem scenario (known as a research question or analytical question) and apply a 1-sample z-test, while explaining all the steps required to call our results "statistically significant".
+The best way to explain how 1-sample z-tests work is by using an example. 
+Let's set up a problem scenario (known as a research question or analytical question) and apply a 1-sample z-test, while explaining all the steps required to call our results "statistically significant".
 
 ## The Analytical Question 
 
->A researcher wants to study the effects of mentoring on intelligence scores. He wants to know as a baseline what the average intelligence of his students were relative to the general population. He used a standardized IQ test which has a mean of 100 and standard deviation of 16. The 50 students in his study scored an average of 102 on the IQ test. At He wants to investigate the fact whether the increase is IQ for the sample students is due to mentoring. 
+A researcher wants to study the effects of mentoring on intelligence scores. He wants to know as a baseline what the average intelligence of his students were relative to the general population. He used a standardized IQ test which has a mean of 100 and standard deviation of 16. The 50 students in his study scored an average of 102 on the IQ test. He wants to investigate  whether the increase is IQ for the sample students is because of mentoring. 
 
 ## Step 1: State Your Hypotheses
 
-### The Alternative Hypothesis (Ha)
+### The Alternative Hypothesis ($H_a$)
 
-Our alternative hypothesis would always reflect the the idea/theory that needs to be tested. For our problem, this would mean that we want to test if the mentoring has resulted as a significant increase in student IQ. So, we would write it down as:
+The alternative hypothesis always reflects the the idea or theory that needs to be tested. For this problem, you want to test if the mentoring has resulted in a significant increase in student IQ. So, you would write it down as:
 
-> Sample mean is **significantly** greater than the population mean
+> The sample mean is **significantly** bigger than the population mean
 
-Again, significance is the key here. IF we denote sample mean as (M), and population mean as mu (μ), we can write our alternative hypothesis as:
+Again, significance is the key here. If we denote sample mean as $M$, and population mean as mu ($\mu$), you can write the alternative hypothesis as:
 
->**Ha : μ < M**
+$$\large H_a\text{:   }\mu < M$$
 
-We test our alternative hypothesis where mu is less than m. We could, in other situations, check for both possibilities of being less than as well as greater than by checking  μ ≠ M. 
+The alternative hypothesis here is that $\mu$ is less than $M$. In other situations, you could check for both possibilities of be $\mu$ being smaller OR bigger than by checking  $\mu \neq M$. 
 
-Maybe the mentoring results as a lower IQ .. who knows !
+Maybe the mentoring results as a lower IQ... Who knows!
 
-<img src="https://cdn-images-1.medium.com/max/1280/1*ewjLY5tKZCkCZCjU1y8KAg.jpeg" width=400>
+<img src="images/baby.jpeg" width=400>
 
-Let's just check for the siginificant increase for now to keep the process simple. 
+For now, you'll just check for the **siginificant increase** for now to keep the process simple.
 
-### The Null Hypothesis (Ho)
+### The Null Hypothesis ($H_0$)
 
-For 1-sample z-test, we define our null hypothesis as that there is no significant difference between specified sample and population, any observed difference may be present due to sampling or experimental error. Considering this, for our problem, we can define a null hypothesis(Ho) as:
+For a one-sample z-test, you define your null hypothesis as there being **no significant difference** between specified sample and population. This means that under the null hypothesis, you assume that any observed (generally small) difference may be present due to sampling or experimental error. Considering this, for this problem, you can define a null hypothesis ($H_0$) as:
 
-> There is no **significant** difference between sample mean and population mean 
+> There is **no significant difference** between sample mean and population mean 
 
-Remember the emphasis here is on significant difference, rather than just difference which we could simply calculate by subtracting mean values. 
+Remember the emphasis is on a _significant_ difference, rather than just any difference as a natural result of taking samples.
 
-IF we denote sample mean as (M), and population mean as mu (μ), mathematically, this null hypothesis can be written as:
+Denoting the sample mean as $M$, and population mean as mu ($\mu$), you can write the null hypothesis as:
 
-> **Ho : μ >= M**
+$$\large H_0\text{:   }\mu \geq M$$
+
 
 ## Step 2: Specify a Significance Level (alpha)
 
-So now that we have our hypotheses is in place, what we want to do is REJECT our null hypothesis, instead of trying to prove our alternative hypothesis. Thats the way significance testing works. It takes a lot more to actually prove your intuition as a "scientific theory". By rejecting the null hypothesis, you can confidently say that your results are significant. And for this, you need to set a significance level (called alpha)
+Now that your hypotheses are in place, you have to decide on your significance level alpha ($\alpha$) as a cut-off value to define whether you can reject your null hypothesis or not.
 
->The significance level is the probability of rejecting Ho when it is true, so it is the probability of accepting H1 when Ho is true and by the above, the significance level is the probablity that you ''think'' that you found evidence while in ''reality'' it is false evidence.
+As discussed previously, often, $\alpha$ is set to 0.05, which also has as a side-effect that there is a 5 percent chance that you will reject the null hypothesis when it is true.
+Later, you'll see that using alpha, you'll formulate your test result as: "with a confidence level of 95%, we can state that...". For a z-distribution, this can be shown as below:
 
-Yes, it takes some getting used to come in terms with this. Putting it simply, the significance level is the probability that you find "false evidence".
+<img src="images/hypothesis_test.jpg" width=670>
 
-For general experimenting, the significance level (alpha) is .05 i.e. there is 5 percent chance that you will reject null hypothesis when it is true. So later we'll see that if our results follow this pattern, we will be able to say that "With a confidence level of 95%, we can state that ....". For a z-distribution, this can be shown as below:
-![](https://slideplayer.com/slide/9325599/28/images/6/Types+of+Hypothesis+Tests.jpg)
 
-For testing both sides of the distribution , we need to do a 2-tail test to see if mentoring lowers OR highers the IQ of student. Each red region would calculated as alpha/2. When testing of single side (as in with our example) i.e. just higher OR just lower, we use a 1-tail test as shown in the first and second images. The alpha value we need to test is 0.05 or 5%. i.e.
+If you test both sides of the distribution ($\mu \neq M$, when $\mu$ can either be smaller OR bigger), you need to perform a 2-tail test to see if mentoring lowers OR highers the IQ of student.
 
-> The probabilities of seeing a value equal to or greater than our test statistic.
-
+Each red region would calculated as $\dfrac{\alpha}{2}$. When testing of single side (as in the example) i.e. just higher OR just lower, you can use a one-tail test as shown in the first and second images. The $\alpha$ value we use is 0.05 or $5\%$.
 
 ## Step 3: Calculate the test statistic
 
-For z-tests, a z-statistic is used as our test statistic. There are other statistics suitable of different types of tests. A 1-sample z-statistic is calculated as:
+For z-tests, a z-statistic is used as our test statistic. You'll see other statistics suitable for other tests later. A one-sample z-statistic is calculated as:
 
-![](http://sites.nicholas.duke.edu/statsreview/files/2013/06/zstat.png)
+$$ \large \text{z-statistic} = \dfrac{\bar x - \mu_0}{{\sigma}/{\sqrt{n}}} $$
 
-This formula slightly difference from standard score formula we saw earlier. It includes square root of n to reflect we are dealing with a sample variance here. 
-All you do is put in the values you are given into the formula. Your question should give you the sample mean (x̄), the standard deviation (σ) of population, and the number of items in the sample (n). Your hypothesized mean (in other words, the mean you are testing the hypothesis for, or your null hypothesis) is μ0.
+This formula slightly differs from the standard score formula. It includes the square square root of n to reflect that we are dealing with the sample variance here. 
 
-So let's calculate this. 
+Now, all you need to do, is use this formula given your sample mean $\bar x$, the population standard deviation $\sigma$, and the number of items in the sample ($n$). $\mu_0$ is the mean you're testing the hypothesis for, or the "hypothesized mean". 
+
+Let's use Python to calculate this. 
 
 
 ```python
@@ -125,18 +122,11 @@ plt.fill_between(x=np.arange(0.88,4,0.01),
                  alpha=0.35, 
                  label= 'Area above z-statistic')
 plt.legend()
-plt.title ('z-statistic = 0.88')
+plt.title ('z-statistic = 0.88');
 ```
 
 
-
-
-    Text(0.5,1,'z-statistic = 0.88')
-
-
-
-
-![png](index_files/index_13_1.png)
+![png](index_files/index_13_0.png)
 
 
 ## Step 4:  Calculate the p-Value
