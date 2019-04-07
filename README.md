@@ -78,7 +78,7 @@ $$ \large \text{z-statistic} = \dfrac{\bar x - \mu_0}{{\sigma}/{\sqrt{n}}} $$
 
 This formula slightly differs from the standard score formula. It includes the square square root of n to reflect that we are dealing with the sample variance here. 
 
-Now, all you need to do, is use this formula given your sample mean $\bar x$, the population standard deviation $\sigma$, and the number of items in the sample ($n$). $\mu_0$ is the mean you're testing the hypothesis for, or the "hypothesized mean". 
+Now, all you need to do is use this formula given your sample mean $\bar x$, the population standard deviation $\sigma$, and the number of items in the sample ($n$). $\mu_0$ is the mean you're testing the hypothesis for, or the "hypothesized mean". 
 
 Let's use Python to calculate this. 
 
@@ -125,13 +125,10 @@ plt.legend()
 plt.title ('z-statistic = 0.88');
 ```
 
+## Step 4:  Calculate the p-value
 
-![png](index_files/index_13_0.png)
-
-
-## Step 4:  Calculate the p-Value
-
-Remember z values in a standard normal distribution represent standard deviations. the standard deviation. A we did before, we shall look up related probability values in a z table, or use scipy.stats to calculate it directly. So cumulative probability upto z-value can be calculated as:
+Remember that z-values in a standard normal distribution represent standard deviations. Just like before, you need to look up the related probability value in a z-table, or use `scipy.stats` to calculate it directly. 
+In Scipy, the cumulative probability up to the z-value can be calculated as:
 
 
 ```python
@@ -145,10 +142,9 @@ stats.norm.cdf(z)
 
 
 
-The percent of area under the normal curve from negative infinity to .88 z score is 81.2% (from z-table and calculations), meaning the average intelligence of this set of students is greater than 81.2% of the population. But we wanted it to be greater than 95% to prove our hypothesis to be significantly correct. 
+The percent area under the curve from to a z-score of 0.88 is 81.2% (using the z-table or Scipy calculations), this means that the average intelligence of the mentored set of students is bigger than 81.2% of the population. But with alpha specified as 0.05, we wanted it to be greater than 95% to prove the hypothesis to be significant.
 
-
-And we get our p value probability by subtracting z value from 1 , as sum of probabilities in a normal distribution is always 1
+Mathematically, you want to get the p-value, and this can be done by subtracting the z-value from 1, since the sum of probabilities is always 1.
 
 
 ```python
@@ -165,12 +161,13 @@ pval
 
 ## Step 5: Interpret p-value
 
-So our p value (0.18) is much larger than our set alpha of 0.05. So what does that mean ? Have we failed ? and iq increase has nothing to do with mentoring ? 
+Our p-value (0.19) is much larger than the alpha of 0.05. So what does that mean? can you not conclude that mentoring leads to a IQ increase? 
 
-Well we cant say that for sure. What we can say is that there is a weak evidence to reject the null hypothesis with given sample. There are ways to scale such experiments up and collect more data, apply sampling techniques to be sure about the real impact. 
+Well, you still can't really say that for sure. What we can say is that there is not enough evidence to reject the null hypothesis with the given sample. There are ways to scale experiments up and collect more data, or apply sampling techniques to be sure about the real impact. 
 
-When the sample data helps in rejecting null hypothesis, we still cant be too sure of the outcome, however we can say that given the evidence our results show a SIGNIFICANT increase in the IQ as a result of mentoring - instead of saying - "Mentoring improves IQ".
+And even when the sample data helps to reject the null hypothesis, you still cannot be 100% sure of the outcome. 
+What you can say, however, is given the evidence, the results show a significant increase in the IQ as a result of mentoring, instead of saying "mentoring improves IQ".
 
 ## Summary 
 
-In this lesson we saw how to run a 1-sample z-test to compare sample and population where the population mean and standard deviation are known. This is the most basic test in statistics as in real world, true population means and sd are rarely identifiable and you have to work with sample statistics. Thats where most advanced tests come in to play. We shall look at those in next statistics section. 
+In this lesson, you learned to run a one-sample z-test to compare sample and population where the population mean and standard deviation are known. This is the most basic test in statistic, as in real world, true population means and standard deviations are rarely identifiable and you need to work with samples. That's where more advanced tests come in to play, which you will encounter later.
