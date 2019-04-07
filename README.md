@@ -3,55 +3,55 @@
 
 ## Introduction
 
-A one-sample z test is the most basic type of hypothesis test and is performed when the population means and standard deviation are known. This makes the analysis very simple. The main takeaway from this lesson and next lab is to have an idea around the process of hypothesis testing and understanding test statistics and p-values. 
+A one-sample z test is the most basic type of hypothesis test and is performed when the population means and standard deviation are known. This makes the analysis very simple. The main takeaway from this lesson and the next lab is to have an idea around the process of hypothesis testing and understanding test statistics and p-values. 
 
 ## Objectives:
 You will be able to:
 * Understand and explain use cases for a 1-sample z-test
 * Set up null and alternative hypotheses
-* Calculate z statistic using z-tables and cdf functions
+* Calculate z statistic using z-tables and CDF functions
 * Calculate and interpret p-value for significance of results
 
 ## One-Sample z-test
 
-**The one-sample z-test is best suited for situations where we we want to investigate whether a given "sample" comes from a particular "population".**
+**The one-sample z-test is best suited for situations where you want to investigate whether a given "sample" comes from a particular "population".**
 
 The best way to explain how 1-sample z-tests work is by using an example. 
 Let's set up a problem scenario (known as a research question or analytical question) and apply a 1-sample z-test, while explaining all the steps required to call our results "statistically significant".
 
 ## The Analytical Question 
 
-A researcher wants to study the effects of mentoring on intelligence scores. He wants to know as a baseline what the average intelligence of his students were relative to the general population. He used a standardized IQ test which has a mean of 100 and standard deviation of 16. The 50 students in his study scored an average of 102 on the IQ test. He wants to investigate  whether the increase is IQ for the sample students is because of mentoring. 
+A researcher wants to study the effects of mentoring on intelligence scores. He wants to know as a baseline what the average intelligence of his students was relative to the general population. He used a standardized IQ test which has a mean of 100 and a standard deviation of 16. The 50 students in his study scored an average of 102 on the IQ test. He wants to investigate whether the increase is IQ for the sample students is because of mentoring. 
 
 ## Step 1: State Your Hypotheses
 
 ### The Alternative Hypothesis ($H_a$)
 
-The alternative hypothesis always reflects the the idea or theory that needs to be tested. For this problem, you want to test if the mentoring has resulted in a significant increase in student IQ. So, you would write it down as:
+The alternative hypothesis always reflects the iidea or theory that needs to be tested. For this problem, you want to test if the mentoring has resulted in a significant increase in student IQ. So, you would write it down as:
 
 > The sample mean is **significantly** bigger than the population mean
 
-Again, significance is the key here. If we denote sample mean as $M$, and population mean as mu ($\mu$), you can write the alternative hypothesis as:
+Again, significance is key here. If we denote sample mean as $M$, and population mean as mu ($\mu$), you can write the alternative hypothesis as:
 
 $$\large H_a\text{:   }\mu < M$$
 
-The alternative hypothesis here is that $\mu$ is less than $M$. In other situations, you could check for both possibilities of be $\mu$ being smaller OR bigger than by checking  $\mu \neq M$. 
+The alternative hypothesis here is that $\mu$ is less than $M$. In other situations, you could check for both possibilities of $\mu$ being smaller OR bigger than by checking  $\mu \neq M$. 
 
 Maybe the mentoring results as a lower IQ... Who knows!
 
 <img src="images/baby.jpeg" width=400>
 
-For now, you'll just check for the **siginificant increase** for now to keep the process simple.
+For now, you'll just check for the **significant increase**, for now, to keep the process simple.
 
 ### The Null Hypothesis ($H_0$)
 
 For a one-sample z-test, you define your null hypothesis as there being **no significant difference** between specified sample and population. This means that under the null hypothesis, you assume that any observed (generally small) difference may be present due to sampling or experimental error. Considering this, for this problem, you can define a null hypothesis ($H_0$) as:
 
-> There is **no significant difference** between sample mean and population mean 
+> There is **no significant difference** between the sample mean and population mean 
 
 Remember the emphasis is on a _significant_ difference, rather than just any difference as a natural result of taking samples.
 
-Denoting the sample mean as $M$, and population mean as mu ($\mu$), you can write the null hypothesis as:
+Denoting the sample mean as $M$, and the population mean as mu ($\mu$), you can write the null hypothesis as:
 
 $$\large H_0\text{:   }\mu \geq M$$
 
@@ -66,9 +66,9 @@ Later, you'll see that using alpha, you'll formulate your test result as: "with 
 <img src="images/hypothesis_test.jpg" width=670>
 
 
-If you test both sides of the distribution ($\mu \neq M$, when $\mu$ can either be smaller OR bigger), you need to perform a 2-tail test to see if mentoring lowers OR highers the IQ of student.
+If you test both sides of the distribution ($\mu \neq M$, when $\mu$ can either be smaller OR bigger), you need to perform a 2-tail test to see if mentoring lowers OR highers the IQ of students.
 
-Each red region would calculated as $\dfrac{\alpha}{2}$. When testing of single side (as in the example) i.e. just higher OR just lower, you can use a one-tail test as shown in the first and second images. The $\alpha$ value we use is 0.05 or $5\%$.
+Each red region would be calculated as $\dfrac{\alpha}{2}$. When testing of a single side (as in the example) i.e. just higher OR just lower, you can use a one-tail test as shown in the first and second images. The $\alpha$ value we use is 0.05 or $5\%$.
 
 ## Step 3: Calculate the test statistic
 
