@@ -21,13 +21,13 @@ Let's set up a problem scenario (known as a research question or analytical ques
 
 ## The Analytical Question 
 
-A researcher wants to study the effects of mentoring on intelligence scores. He wants to know as a baseline what the average intelligence of his students was relative to the general population. He used a standardized IQ test which has a mean of 100 and a standard deviation of 16. The 50 students in his study scored an average of 102 on the IQ test. He wants to investigate whether the increase is IQ for the sample students is because of mentoring. 
+A data scientist wants to examine if there is an effect on IQ scores when using tutors. To analyze this, she conducts IQ tests on a sample of 40 students, and wants to compare her students' IQ to the general population IQ. The way an IQ score is structured, we know that a standardized IQ test has a mean of 100, and a standard deviation of 16. When she tests her group of students, however, she gets an average IQ of 103. Based on this finding, does tutoring make a difference?
 
 ## Step 1: State Your Hypotheses
 
 ### The Alternative Hypothesis ($H_a$)
 
-The alternative hypothesis always reflects the iidea or theory that needs to be tested. For this problem, you want to test if the mentoring has resulted in a significant increase in student IQ. So, you would write it down as:
+The alternative hypothesis always reflects the idea or theory that needs to be tested. For this problem, you want to test if the mentoring has resulted in a significant increase in student IQ. So, you would write it down as:
 
 > The sample mean is **significantly** bigger than the population mean
 
@@ -38,8 +38,6 @@ $$\large H_a\text{:   }\mu < M$$
 The alternative hypothesis here is that $\mu$ is less than $M$. In other situations, you could check for both possibilities of $\mu$ being smaller OR bigger than by checking  $\mu \neq M$. 
 
 Maybe the mentoring results as a lower IQ... Who knows!
-
-<img src="images/baby.jpeg" width=400>
 
 For now, you'll just check for the **significant increase**, for now, to keep the process simple.
 
@@ -86,8 +84,8 @@ Let's use Python to calculate this.
 ```python
 import scipy.stats as stats
 from math import sqrt
-x_bar = 102 # sample mean 
-n = 50 # number of students
+x_bar = 103 # sample mean 
+n = 40 # number of students
 sigma = 16 # sd of population
 mu = 100 # Population mean 
 
@@ -98,7 +96,7 @@ z
 
 
 
-    0.8838834764831844
+    1.1858541225631423
 
 
 
@@ -109,21 +107,25 @@ Let's try to plot this z value on a standard normal distribution to see what it 
 import numpy as np
 import matplotlib.pyplot as plt
 plt.style.use('seaborn')
-plt.fill_between(x=np.arange(-4,0.88,0.01),
-                 y1= stats.norm.pdf(np.arange(-4,0.88,0.01)) ,
+plt.fill_between(x=np.arange(-4,1.19,0.01),
+                 y1= stats.norm.pdf(np.arange(-4,1.19,0.01)) ,
                  facecolor='red',
                  alpha=0.35,
                  label= 'Area below z-statistic'
                  )
 
-plt.fill_between(x=np.arange(0.88,4,0.01), 
-                 y1= stats.norm.pdf(np.arange(0.88,4,0.01)) ,
+plt.fill_between(x=np.arange(1.19,4,0.01), 
+                 y1= stats.norm.pdf(np.arange(1.19,4,0.01)) ,
                  facecolor='blue',
                  alpha=0.35, 
                  label= 'Area above z-statistic')
 plt.legend()
-plt.title ('z-statistic = 0.88');
+plt.title ('z-statistic = 1.19');
 ```
+
+
+![png](index_files/index_3_0.png)
+
 
 ## Step 4:  Calculate the p-value
 
@@ -138,11 +140,11 @@ stats.norm.cdf(z)
 
 
 
-    0.8116204410942089
+    0.8821600432854813
 
 
 
-The percent area under the curve from to a z-score of 0.88 is 81.2% (using the z-table or Scipy calculations), this means that the average intelligence of the mentored set of students is bigger than 81.2% of the population. But with alpha specified as 0.05, we wanted it to be greater than 95% to prove the hypothesis to be significant.
+The percent area under the curve from to a z-score of 1.19 is 88.2% (using the z-table or Scipy calculations), this means that the average intelligence of the mentored set of students is bigger than 88.2% of the population. But with alpha specified as 0.05, we wanted it to be greater than 95% to prove the hypothesis to be significant.
 
 Mathematically, you want to get the p-value, and this can be done by subtracting the z-value from 1, since the sum of probabilities is always 1.
 
@@ -155,19 +157,19 @@ pval
 
 
 
-    0.18837955890579106
+    0.11783995671451875
 
 
 
 ## Step 5: Interpret p-value
 
-Our p-value (0.19) is much larger than the alpha of 0.05. So what does that mean? can you not conclude that mentoring leads to a IQ increase? 
+Our p-value (0.12) is larger than the alpha of 0.05. So what does that mean? can you not conclude that tutoring leads to a IQ increase? 
 
-Well, you still can't really say that for sure. What we can say is that there is not enough evidence to reject the null hypothesis with the given sample. There are ways to scale experiments up and collect more data, or apply sampling techniques to be sure about the real impact. 
+Well, you still can't really say that for sure. What we can say is that there is not enough evidence to reject the null hypothesis with the given sample, given an alpha of 0.05. There are ways to scale experiments up and collect more data, or apply sampling techniques to be sure about the real impact. 
 
 And even when the sample data helps to reject the null hypothesis, you still cannot be 100% sure of the outcome. 
-What you can say, however, is given the evidence, the results show a significant increase in the IQ as a result of mentoring, instead of saying "mentoring improves IQ".
+What you can say, however, is given the evidence, the results show a significant increase in the IQ as a result of mentoring, instead of saying "tutoring improves IQ".
 
 ## Summary 
 
-In this lesson, you learned to run a one-sample z-test to compare sample and population where the population mean and standard deviation are known. This is the most basic test in statistic, as in real world, true population means and standard deviations are rarely identifiable and you need to work with samples. That's where more advanced tests come in to play, which you will encounter later.
+In this lesson, you learned to run a one-sample z-test to compare sample and population where the population mean and standard deviation are known. This is the most basic test in statistic, as in real world, true population means and standard deviations are rarely identifiable and you need to work with samples. That's where more advanced tests come in to play, which you will learn about later.
