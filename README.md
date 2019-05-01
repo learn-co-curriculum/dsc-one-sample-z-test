@@ -27,7 +27,7 @@ A data scientist wants to examine if there is an effect on IQ scores when using 
 
 ### The Alternative Hypothesis ($H_a$)
 
-The alternative hypothesis always reflects the idea or theory that needs to be tested. For this problem, you want to test if the mentoring has resulted in a significant increase in student IQ. So, you would write it down as:
+The alternative hypothesis always reflects the idea or theory that needs to be tested. For this problem, you want to test if the tutoring has resulted in a significant increase in student IQ. So, you would write it down as:
 
 > The sample mean is **significantly** bigger than the population mean
 
@@ -37,7 +37,7 @@ $$\large H_a\text{:   }\mu < M$$
 
 The alternative hypothesis here is that $\mu$ is less than $M$. In other situations, you could check for both possibilities of $\mu$ being smaller OR bigger than by checking  $\mu \neq M$. 
 
-Maybe the mentoring results as a lower IQ... Who knows!
+Maybe the tutoring results as a lower IQ... Who knows!
 
 For now, you'll just check for the **significant increase**, for now, to keep the process simple.
 
@@ -64,7 +64,7 @@ Later, you'll see that using alpha, you'll formulate your test result as: "with 
 <img src="images/hypothesis_test.jpg" width=670>
 
 
-If you test both sides of the distribution ($\mu \neq M$, when $\mu$ can either be smaller OR bigger), you need to perform a 2-tail test to see if mentoring lowers OR highers the IQ of students.
+If you test both sides of the distribution ($\mu \neq M$, when $\mu$ can either be smaller OR bigger), you need to perform a 2-tail test to see if tutoring lowers OR highers the IQ of students.
 
 Each red region would be calculated as $\dfrac{\alpha}{2}$. When testing of a single side (as in the example) i.e. just higher OR just lower, you can use a one-tail test as shown in the first and second images. The $\alpha$ value we use is 0.05 or $5\%$.
 
@@ -144,7 +144,7 @@ stats.norm.cdf(z)
 
 
 
-The percent area under the curve from to a z-score of 1.19 is 88.2% (using the z-table or Scipy calculations), this means that the average intelligence of the mentored set of students is bigger than 88.2% of the population. But with alpha specified as 0.05, we wanted it to be greater than 95% to prove the hypothesis to be significant.
+The percent area under the curve from to a z-score of 1.19 is 88.2% (using the z-table or Scipy calculations), this means that the average intelligence of the tutored set of students is bigger than 88.2% of the population. But with alpha specified as 0.05, we wanted it to be greater than 95% to prove the hypothesis to be significant.
 
 Mathematically, you want to get the p-value, and this can be done by subtracting the z-value from 1, since the sum of probabilities is always 1.
 
@@ -168,7 +168,7 @@ Our p-value (0.12) is larger than the alpha of 0.05. So what does that mean? can
 Well, you still can't really say that for sure. What we can say is that there is not enough evidence to reject the null hypothesis with the given sample, given an alpha of 0.05. There are ways to scale experiments up and collect more data, or apply sampling techniques to be sure about the real impact. 
 
 And even when the sample data helps to reject the null hypothesis, you still cannot be 100% sure of the outcome. 
-What you can say, however, is given the evidence, the results show a significant increase in the IQ as a result of mentoring, instead of saying "tutoring improves IQ".
+What you can say, however, is given the evidence, the results show a significant increase in the IQ as a result of tutoring, instead of saying "tutoring improves IQ".
 
 ## Summary 
 
