@@ -61,7 +61,7 @@ Now that your hypotheses are in place, you have to decide on your significance l
 As discussed previously, often, $\alpha$ is set to 0.05, which also has as a side-effect that there is a 5 percent chance that you will reject the null hypothesis when it is true.
 Later, you'll see that using alpha, you'll formulate your test result as: "with a confidence level of 95%, we can state that...". For a z-distribution, this can be shown as below:
 
-<img src="images/hypothesis_test.jpg" width=670>
+<img src="images/hypothesis_test.png" width=670>
 
 
 If you test both sides of the distribution ($\mu \neq M$, when $\mu$ can either be smaller OR bigger), you need to perform a 2-tail test to see if tutoring lowers OR highers the IQ of students.
