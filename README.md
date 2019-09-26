@@ -66,7 +66,7 @@ Later, you'll see that using alpha, you'll formulate your test result as: "with 
 
 If you test both sides of the distribution ($\mu \neq \bar{x}$, when $\mu$ can either be smaller OR bigger), you need to perform a 2-tail test to see if tutoring results in lower OR higher IQs.
 
-Each red region would be calculated as $\dfrac{\alpha}{2}$. When testing a single side (as in the example) i.e. just higher OR just lower, you can use a one-tail test as shown in the first and second images. The $\alpha$ value we use is 0.05 or $5\%$.
+Each purple region would be calculated as $\dfrac{\alpha}{2}$. When testing a single side (as in the example) i.e. just higher OR just lower, you can use a one-tail test as shown in the first and second images. The $\alpha$ value we use is 0.05 or $5\%$.
 
 ## Step 3: Calculate the test statistic
 
