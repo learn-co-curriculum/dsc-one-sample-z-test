@@ -1,5 +1,5 @@
 
-# One-Sample $z$-Test
+# One-Sample z-Test
 
 ## Introduction
 
