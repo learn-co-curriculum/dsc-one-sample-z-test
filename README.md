@@ -3,7 +3,7 @@
 
 ## Introduction
 
-A one-sample $z$-test is the most basic type of hypothesis test and is performed when the population means and standard deviation are known. This makes the analysis very simple. The main takeaway from this lesson and the next lab is to have an idea around the process of hypothesis testing and understanding test statistics and p-values. 
+A one-sample $z$-test is the most basic type of hypothesis test. It is performed when the population means and standard deviation are known. This makes the analysis very simple. The main takeaway from this lesson and the next lab is to have an idea around the process of hypothesis testing and understanding test statistics and p-values. 
 
 ## Objectives:
 You will be able to:
