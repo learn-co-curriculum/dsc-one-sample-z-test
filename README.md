@@ -7,17 +7,19 @@ A one-sample $z$-test is the most basic type of hypothesis test. It is performed
 
 ## Objectives:
 You will be able to:
-* Understand and explain use cases for a 1-sample $z$-test
+
+* Explain use cases for a 1-sample z-test
 * Set up null and alternative hypotheses
-* Calculate $z$-statistics using $z$-tables and CDF functions
-* Calculate and interpret p-values for significance of results
+* Use the z-table and scipy methods to acquire the p value for a given z-score
+* Calculate and interpret p-value for significance of results
 
 ## One-Sample $z$-test
 
 **The one-sample $z$-test is best suited for situations where you want to investigate whether a given "sample" comes from a particular "population".**
 
-The best way to explain how 1-sample $z$-tests work is by using an example. 
-Let's set up a problem scenario (known as a research question or analytical question) and apply a 1-sample $z$-test, while explaining all the steps required to call our results "statistically significant".
+The best way to explain how one-sample $z$-tests work is by using an example.
+
+Let's set up a problem scenario (known as a research question or analytical question) and apply a one-sample $z$-test, while explaining all the steps required to call our results "statistically significant".
 
 ## The Analytical Question 
 
@@ -35,7 +37,7 @@ Again, significance is key here. If we denote the sample mean as $\bar{x}$, and 
 
 $$\large H_a\text{:   }\mu < \bar{x}$$
 
-The alternative hypothesis here is that $\mu$ is less than $\bar{x}$. In other situations, you could check for both possibilities of $\mu$ being smaller OR bigger than by checking  $\mu \neq \bar{x}$. 
+The alternative hypothesis here is that the population mean $\mu$ is less than the sample mean $\bar{x}$. In other situations, you could check for both possibilities of $\mu$ being smaller OR bigger than by checking  $\mu \neq \bar{x}$. 
 
 Maybe the tutoring results in a lower IQ... Who knows!
 
@@ -49,7 +51,7 @@ For a one-sample $z$-test, you define your null hypothesis as there being **no s
 
 Remember the emphasis is on a _significant_ difference, rather than just any difference as a natural result of taking samples.
 
-Denoting the sample mean as $\bar{x}$, and the population mean as mu ($\mu$), you can write the null hypothesis as:
+Denoting the sample mean as $\bar{x}$, and the population mean as $\mu$, you can write the null hypothesis as:
 
 $$\large H_0\text{:   }\mu \geq \bar{x}$$
 
@@ -59,18 +61,18 @@ $$\large H_0\text{:   }\mu \geq \bar{x}$$
 Now that your hypotheses are in place, you have to decide on your significance level alpha ($\alpha$) as a cut-off value to define whether you can reject your null hypothesis or not.
 
 As discussed previously, often, $\alpha$ is set to 0.05, which also has as a side-effect that there is a 5 percent chance that you will reject the null hypothesis when it is true.
-Later, you'll see that using alpha, you'll formulate your test result as: "with a confidence level of 95%, we can state that...". For a $z$-distribution, this can be shown as below:
+
+Later, you'll see that using $\alpha$, you'll formulate your test result as: "with a confidence level of 95%, we can state that...". For a $z$-distribution, this can be shown as below:
 
 <img src="images/hypothesis_test.png" width=670>
 
-
-If you test both sides of the distribution ($\mu \neq \bar{x}$, when $\mu$ can either be smaller OR bigger), you need to perform a 2-tail test to see if tutoring results in lower OR higher IQs.
+If you test both sides of the distribution ($\mu \neq \bar{x}$, when $\mu$ can either be smaller OR bigger), you need to perform a two-tail test to see if tutoring results in lower OR higher IQs.
 
 Each purple region would be calculated as $\dfrac{\alpha}{2}$. When testing a single side (as in the example) i.e. just higher OR just lower, you can use a one-tail test as shown in the first and second images. The $\alpha$ value we use is 0.05 or $5\%$.
 
 ## Step 3: Calculate the test statistic
 
-For $z$-tests, a $z$-statistic is used as our test statistic. You'll see other statistics suitable for other tests later. A one-sample $z$-statistic is calculated as:
+For $z$-tests, a $z$-statistic is used as our test statistic. You'll see other test statistics suitable for other tests later. A one-sample $z$-statistic is calculated as:
 
 $$ \large \text{z-statistic} = \dfrac{\bar x - \mu_0}{{\sigma}/{\sqrt{n}}} $$
 
@@ -167,7 +169,7 @@ pval
 
 Our p-value (0.12) is larger than the alpha of 0.05. So what does that mean? Can you not conclude that tutoring leads to an IQ increase? 
 
-Well, you still can't really say that for sure. What we can say is that there is not enough evidence to reject the null hypothesis with the given sample, given an alpha of 0.05. There are ways to scale experiments up and collect more data or apply sampling techniques to be sure about the real impact. 
+Well, you still can't really say that for sure. **What we can say is that there is not enough evidence to reject the null hypothesis with the given sample, given an alpha of 0.05.** There are ways to scale experiments up and collect more data or apply sampling techniques to be sure about the real impact. 
 
 And even when the sample data helps to reject the null hypothesis, you still cannot be 100% sure of the outcome. 
 What you can say, however, is given the evidence, the results show a significant increase in the IQ as a result of tutoring, instead of saying "tutoring improves IQ".
