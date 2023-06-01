@@ -1,4 +1,3 @@
-
 # One-Sample z-Test
 
 ## Introduction
@@ -110,7 +109,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 %matplotlib inline
 
-plt.style.use('seaborn')
+plt.style.use('seaborn-v0_8-whitegrid')
 plt.fill_between(x=np.arange(-4,1.19,0.01),
                  y1= stats.norm.pdf(np.arange(-4,1.19,0.01)) ,
                  facecolor='red',
@@ -128,7 +127,9 @@ plt.title ('z-statistic = 1.19');
 ```
 
 
+    
 ![png](index_files/index_3_0.png)
+    
 
 
 ## Step 4:  Calculate the p-value
