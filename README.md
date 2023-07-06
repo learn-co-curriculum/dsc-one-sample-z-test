@@ -2,7 +2,7 @@
 
 ## Introduction
 
-A one-sample $z$-test is the most basic type of hypothesis test. It is performed when the population means and standard deviation are known. This makes the analysis very simple. The main takeaway from this lesson and the next lab is to have an idea around the process of hypothesis testing and understanding test statistics and p-values. 
+A one-sample *z*-test is the most basic type of hypothesis test. It is performed when the population means and standard deviation are known. This makes the analysis very simple. The main takeaway from this lesson and the next lab is to have an idea around the process of hypothesis testing and understanding test statistics and p-values. 
 
 ## Objectives:
 You will be able to:
@@ -12,13 +12,13 @@ You will be able to:
 * Use the z-table and scipy methods to acquire the p value for a given z-score
 * Calculate and interpret p-value for significance of results
 
-## One-Sample $z$-test
+## One-Sample *z*-test
 
-**The one-sample $z$-test is best suited for situations where you want to investigate whether a given "sample" comes from a particular "population".**
+**The one-sample *z*-test is best suited for situations where you want to investigate whether a given "sample" comes from a particular "population".**
 
-The best way to explain how one-sample $z$-tests work is by using an example.
+The best way to explain how one-sample *z*-tests work is by using an example.
 
-Let's set up a problem scenario (known as a research question or analytical question) and apply a one-sample $z$-test, while explaining all the steps required to call our results "statistically significant".
+Let's set up a problem scenario (known as a research question or analytical question) and apply a one-sample *z*-test, while explaining all the steps required to call our results "statistically significant".
 
 ## The Analytical Question 
 
@@ -44,7 +44,7 @@ For now, you'll just check for a **significant increase**, for now, to keep the 
 
 ### The Null Hypothesis ($H_0$)
 
-For a one-sample $z$-test, you define your null hypothesis as there being **no significant difference** between the specified sample and population means. In other words, under the null hypothesis, you assume that any observed (generally small) difference between the sample and population means may be present due to sampling or experimental error. Considering this, for this problem, you can define a null hypothesis ($H_0$) as:
+For a one-sample *z*-test, you define your null hypothesis as there being **no significant difference** between the specified sample and population means. In other words, under the null hypothesis, you assume that any observed (generally small) difference between the sample and population means may be present due to sampling or experimental error. Considering this, for this problem, you can define a null hypothesis ($H_0$) as:
 
 > There is **no significant difference** between the sample mean and population mean 
 
@@ -61,7 +61,7 @@ Now that your hypotheses are in place, you have to decide on your significance l
 
 As discussed previously, often, $\alpha$ is set to 0.05, which also has as a side-effect that there is a 5 percent chance that you will reject the null hypothesis when it is true.
 
-Later, you'll see that using $\alpha$, you'll formulate your test result as: "with a confidence level of 95%, we can state that...". For a $z$-distribution, this can be shown as below:
+Later, you'll see that using $\alpha$, you'll formulate your test result as: "with a confidence level of 95%, we can state that...". For a *z*-distribution, this can be shown as below:
 
 <img src="images/hypothesis_test.png" width=670>
 
@@ -71,7 +71,7 @@ Each purple region would be calculated as $\dfrac{\alpha}{2}$. When testing a si
 
 ## Step 3: Calculate the test statistic
 
-For $z$-tests, a $z$-statistic is used as our test statistic. You'll see other test statistics suitable for other tests later. A one-sample $z$-statistic is calculated as:
+For *z*-tests, a *z*-statistic is used as our test statistic. You'll see other test statistics suitable for other tests later. A one-sample *z*-statistic is calculated as:
 
 $$ \large \text{z-statistic} = \dfrac{\bar x - \mu_0}{{\sigma}/{\sqrt{n}}} $$
 
@@ -101,7 +101,7 @@ z
 
 
 
-Let's try to plot this $z$-value on a standard normal distribution to see what it means. 
+Let's try to plot this *z*-value on a standard normal distribution to see what it means. 
 
 
 ```python
@@ -134,8 +134,8 @@ plt.title ('z-statistic = 1.19');
 
 ## Step 4:  Calculate the p-value
 
-Remember that $z$-values in a standard normal distribution represent standard deviations. Just like before, you need to look up the related probability value in a $z$-table, or use `scipy.stats` to calculate it directly. 
-In SciPy, the cumulative probability up to the $z$-value can be calculated as:
+Remember that *z*-values in a standard normal distribution represent standard deviations. Just like before, you need to look up the related probability value in a *z*-table, or use `scipy.stats` to calculate it directly. 
+In SciPy, the cumulative probability up to the *z*-value can be calculated as:
 
 
 ```python
@@ -149,9 +149,9 @@ stats.norm.cdf(z)
 
 
 
-The percent area under the curve from to a $z$-score of 1.19 is 88.2% (using the $z$-table or SciPy calculations), this means that the average intelligence of the tutored set of students is bigger than 88.2% of the population. But with alpha specified as 0.05, we wanted it to be greater than 95% to prove the hypothesis to be significant.
+The percent area under the curve from to a *z*-score of 1.19 is 88.2% (using the *z*-table or SciPy calculations), this means that the average intelligence of the tutored set of students is bigger than 88.2% of the population. But with alpha specified as 0.05, we wanted it to be greater than 95% to prove the hypothesis to be significant.
 
-Mathematically, you want to get the p-value, and this can be done by subtracting the $z$-value from 1, since the sum of probabilities is always 1.
+Mathematically, you want to get the p-value, and this can be done by subtracting the *z*-value from 1, since the sum of probabilities is always 1.
 
 
 ```python
@@ -177,4 +177,4 @@ What you can say, however, is given the evidence, the results show a significant
 
 ## Summary 
 
-In this lesson, you learned to run a one-sample $z$-test to compare sample and population where the population mean and standard deviation are known. This is the most basic test in statistics, but in the real world, the true population means and standard deviations are rarely identifiable and you need to work with samples. That's where more advanced tests come in to play, which you will learn about later.
+In this lesson, you learned to run a one-sample *z*-test to compare sample and population where the population mean and standard deviation are known. This is the most basic test in statistics, but in the real world, the true population means and standard deviations are rarely identifiable and you need to work with samples. That's where more advanced tests come in to play, which you will learn about later.
